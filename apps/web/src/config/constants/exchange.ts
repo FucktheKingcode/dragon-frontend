@@ -16,7 +16,7 @@ export {
   ADDITIONAL_BASES,
   BASES_TO_CHECK_TRADES_AGAINST,
   CUSTOM_BASES,
-  V2_ROUTER_ADDRESS,
+  V2_ROUTER_ADDRESS
 } from '@pancakeswap/smart-router/evm'
 
 // DEV_NOTE [체인설정]_8 : block time
@@ -38,7 +38,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.BSC]: [bscTokens.usdt, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.KLAYTN]: [klaytnTokens.usdt, klaytnTokens.weth],
-  [ChainId.KLAYTN_TESTNET]: [klaytnTestnetTokens.usdt, klaytnTestnetTokens.weth],
+  [ChainId.KLAYTN_TESTNET]: [klaytnTestnetTokens.usdt, klaytnTestnetTokens.weth, klaytnTestnetTokens.newToken],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -48,7 +48,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.BSC]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.KLAYTN]: [klaytnTokens.usdt, klaytnTokens.weth],
-  [ChainId.KLAYTN_TESTNET]: [klaytnTestnetTokens.usdt, klaytnTestnetTokens.weth],
+  [ChainId.KLAYTN_TESTNET]: [klaytnTestnetTokens.usdt, klaytnTestnetTokens.weth, klaytnTestnetTokens.newToken],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -63,7 +63,10 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     [bscTokens.dai, bscTokens.usdt],
   ],
   [ChainId.KLAYTN]: [[klaytnTokens.weth, klaytnTokens.usdt]],
-  [ChainId.KLAYTN_TESTNET]: [[klaytnTestnetTokens.weth, klaytnTestnetTokens.usdt]],
+  [ChainId.KLAYTN_TESTNET]: [
+    [klaytnTestnetTokens.weth, klaytnTestnetTokens.usdt],
+    [klaytnTestnetTokens.weth, klaytnTestnetTokens.newToken]
+  ],
 }
 
 export const BIG_INT_ZERO = 0n

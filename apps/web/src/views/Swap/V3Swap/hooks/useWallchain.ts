@@ -189,6 +189,7 @@ export function useWallchainSwapCallArguments(
   onWallchainDrop: () => void,
   masterInput?: [TMEVFoundResponse['searcherRequest'], string],
 ): SwapCall[] | WallchainSwapCall[] {
+  console.log('useWallchainSwapCallArguments', trade, previousSwapCalls, account, onWallchainDrop, masterInput);
   const [swapCalls, setSwapCalls] = useState<SwapCall[] | WallchainSwapCall[]>([])
   const { data: walletClient } = useWalletClient()
 
